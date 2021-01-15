@@ -5,6 +5,10 @@ import React, { Component } from 'react'
 
 export class App extends Component {
 
+  state = {
+    nombre : 1
+  }
+
   bonjour = () =>{
     console.log("bonjour")
   }
@@ -17,13 +21,17 @@ export class App extends Component {
     console.log("tu ne peux pas copier le titre !")
   }
 
+  
+
 
   render() {
+
+    console.log(this.state.nombre)
 
     
     return (
       <div>
-        <h1 onMouseOver={this.hover} onCopy={this.copy}>Exercice 8</h1>
+        <h1 onMouseOver={e =>{ console.log(e.target.innerHTML)}} onCopy={this.copy}>Exercice 8</h1>
         <button onClick={this.bonjour}>click</button>
         
       </div>
